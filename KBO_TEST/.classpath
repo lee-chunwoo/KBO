@@ -33,7 +33,4 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/workspace/kisty/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/CLOUDMESH_KNGIS/WEB-INF/lib/ojdbc6-11.1.0.7.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user2/Desktop/ojdbc14-10.2.0.4.0.jar"/>
-	<classpathentry kind="output" path="target/classes"/>
 </classpath>

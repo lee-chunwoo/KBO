@@ -38,9 +38,8 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		List<test> list = session.selectList("mybatis.test.test");
-		System.out.println("list : " + list.get(1));
 		
-		model.addAttribute("test", list.get(1).getNo() );
+		model.addAttribute("test", list);
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";

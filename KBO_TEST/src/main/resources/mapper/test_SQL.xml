@@ -5,9 +5,9 @@
 <mapper namespace="mybatis.test">
 
 	<select id="test" resultType="vo.test">
-		SELECT NAME, RANKING
+		SELECT TEAM_NAME
 		FROM TEAM
-		ORDER BY RANKING
+		ORDER BY SEQ
 	</select>
 	
 </mapper>

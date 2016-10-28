@@ -21,6 +21,26 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- Tiles 사용을 위한 세팅 -->
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	<beans:property name="definitions">
+	        <beans:list>
+	               <beans:value>/WEB-INF/tiles-defs.xml</beans:value>
+	        </beans:list>
+	</beans:property>
+    <!-- resolving preparer names as Spring bean definition names -->
+    <beans:property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory" />
+	</beans:bean>
+	
+	<!-- Tiles 를 위한 ViewResolver 세팅 Controller에서 return ". 으로 시작하면 작동! -->
+	<beans:bean id="viewResolver"
+	       class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	       <beans:property name="viewClass"
+	               value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	       <beans:property name="order" value="1"></beans:property>
+	       <beans:property name="viewNames" value=".*"></beans:property>
+	</beans:bean>
+	
 	<context:component-scan base-package="com.lcwkhs.kbo" />
 	
 	

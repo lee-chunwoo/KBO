@@ -1,8 +1,5 @@
 package com.lcwkhs.kbo;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -13,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import vo.test;
 
 /**
  * Handles requests for the application home page.
@@ -32,17 +27,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		List<test> list = session.selectList("mybatis.test.test");
-		
-		model.addAttribute("test", list);
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+		return ".home";
 	}
 	
 }
